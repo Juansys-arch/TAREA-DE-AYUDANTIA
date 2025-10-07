@@ -7,7 +7,16 @@ export const User = new EntitySchema({
     id: {
       primary: true,
       type: "int",
-      generated: "increment",
+      generated: true,
+    },
+    edad:{
+      type:"int",
+      nullable:true,
+    },
+    nombre:{
+      type:"varchar",
+      length:100,
+      nullable:true,
     },
     email: {
       type: "varchar",
@@ -23,12 +32,10 @@ export const User = new EntitySchema({
     created_at: {
       type: "timestamp",
       createDate: true,
-      default: () => "CURRENT_TIMESTAMP",
     },
     updated_at: {
       type: "timestamp",
       updateDate: true,
-      default: () => "CURRENT_TIMESTAMP",
     },
   },
 });
