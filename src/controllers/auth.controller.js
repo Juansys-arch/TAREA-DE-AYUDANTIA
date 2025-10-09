@@ -23,7 +23,7 @@ export async function register(req, res) {
   try {
     const { nombre, edad, email, password} = req.body;
 
-    if (!nombre || !edad || !email || !password) {
+    if ( !email && !password) {
       return handleErrorClient(res, 400, " Nombre, Edad, Email y contraseña son requeridos");
     }
     
